@@ -2,7 +2,7 @@
 
 Simple App to display news articles with the data pulled from cloud_firestore 
 
-## Packages used
+## Packages 
 
 1. bloc - for state management
 2. auto_route - for navigation
@@ -10,5 +10,5 @@ Simple App to display news articles with the data pulled from cloud_firestore
 4. url_launcher - to open browser in order to show artciles [ for macos, web, desktop, linux]
 
 ## Tests
-1. Used mocktail and bloc_test packages for unit and widget tests
+1. mocktail and bloc_test packages for unit and widget tests
 
