@@ -16,6 +16,7 @@ class TopNewsBloc extends Bloc<TopNewsEvent, TopNewsState> {
 
   final NewsRepository _newsService;
 
+  /// Load the top news articles
   void _loadTopNews(
     LoadTopNewEvent event,
     Emitter<TopNewsState> emit,

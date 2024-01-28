@@ -8,6 +8,7 @@ import 'package:news_app/src/router/app_router.dart';
 import 'package:news_app/src/widgets/responsive.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+/// ArticleItem is a widget that displays a single article.
 class ArticleItem extends StatelessWidget {
   const ArticleItem({
     super.key,
@@ -45,6 +46,7 @@ class _ArticleItemBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
+        /// Launch the article in a browser if the platform is web or desktop.
         if (kIsWeb || !(Platform.isIOS || Platform.isAndroid)) {
           if (!await launchUrl(Uri.parse(article.url))) {
             if (context.mounted) {
@@ -56,6 +58,7 @@ class _ArticleItemBuilder extends StatelessWidget {
             }
           }
         } else {
+          /// Otherwise, navigate to the webview screen.
           context.router.push(
             WebviewRoute(url: article.url),
           );
@@ -65,6 +68,7 @@ class _ArticleItemBuilder extends StatelessWidget {
         children: [
           Row(
             children: [
+              /// Display the image if it exists.
               SizedBox(
                 height: 100,
                 width: 100,
@@ -79,6 +83,7 @@ class _ArticleItemBuilder extends StatelessWidget {
                   ),
                 ),
               ),
+              /// Display the title and description.
               Expanded(
                 flex: 4,
                 child: ListTile(

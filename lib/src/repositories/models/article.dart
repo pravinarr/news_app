@@ -20,6 +20,7 @@ class Article {
     this.content,
   });
 
+  /// Convert the publishedAt string to a DateTime object
   DateTime get publishedAtDateTime => DateTime.parse(publishedAt);
 
   factory Article.fromJson(Map<String, dynamic> json) =>

@@ -20,6 +20,7 @@ class WebviewScreen extends StatefulWidget {
 }
 
 class _WebviewScreenState extends State<WebviewScreen> {
+  ///To show progress bar
   double _progress = 0;
   late WebViewController controller;
 

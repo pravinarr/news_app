@@ -1,30 +1,14 @@
 # news_app
 
-A new Flutter project.
+Simple App to display news articles with the data pulled from cloud_firestore 
 
-## Getting Started
+## Packages used
 
-This project is a starting point for a Flutter application that follows the
-[simple app state management
-tutorial](https://flutter.dev/docs/development/data-and-backend/state-mgmt/simple).
+1. bloc - for state management
+2. auto_route - for navigation
+3. webview_flutter - to show articles if opened in android/ios 
+4. url_launcher - to open browser in order to show artciles [ for macos, web, desktop, linux]
 
-For help getting started with Flutter development, view the
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tests
+1. Used mocktail and bloc_test packages for unit and widget tests
 
-## Assets
-
-The `assets` directory houses images, fonts, and any other files you want to
-include with your application.
-
-The `assets/images` directory contains [resolution-aware
-images](https://flutter.dev/docs/development/ui/assets-and-images#resolution-aware).
-
-## Localization
-
-This project generates localized messages based on arb files found in
-the `lib/src/localization` directory.
-
-To support additional languages, please visit the tutorial on
-[Internationalizing Flutter
-apps](https://flutter.dev/docs/development/accessibility-and-localization/internationalization)

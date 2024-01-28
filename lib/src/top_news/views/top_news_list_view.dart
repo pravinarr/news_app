@@ -13,6 +13,7 @@ class TopNewsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// Wrap the [TopNewsView] with a [BlocProvider] and provide the [TopNewsBloc]
     return BlocProvider(
       create: (context) => TopNewsBloc(
         newsService: context.read<NewsRepository>(),
@@ -32,6 +33,7 @@ class TopNewsView extends StatefulWidget {
 class _TopNewsViewState extends State<TopNewsView> {
   @override
   void initState() {
+    /// Load the top news articles when the view is initialized
     context.read<TopNewsBloc>().add(
           LoadTopNewEvent(),
         );
@@ -46,11 +48,15 @@ class _TopNewsViewState extends State<TopNewsView> {
       ),
       body: BlocBuilder<TopNewsBloc, TopNewsState>(
         builder: (context, state) {
+          /// If the state is [TopNewsLoaded] and the articles list is empty,
           if (state is TopNewsLoaded && state.articles.isEmpty) {
             return const Center(
               child: Text('No articles found'),
             );
-          } else if (state is TopNewsLoaded) {
+          }
+
+          /// If the state is [TopNewsLoaded] and the articles list is not empty,
+          else if (state is TopNewsLoaded) {
             return ListView.builder(
               itemCount: state.articles.length,
               shrinkWrap: true,
@@ -64,11 +70,14 @@ class _TopNewsViewState extends State<TopNewsView> {
             );
           }
 
-          if (state is TopNewsError) {
+          /// If the state is [TopNewsError], show the error message
+          else if (state is TopNewsError) {
             return Center(
               child: Text(state.message),
             );
           }
+
+          /// If the state is [TopNewsInitial] , show a progress indicator
           return const Center(
             child: CircularProgressIndicator(),
           );

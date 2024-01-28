@@ -5,10 +5,10 @@ import 'package:news_app/src/repositories/models/article.dart';
 import 'package:news_app/src/repositories/news_repository.dart';
 import 'package:news_app/src/top_news/top_news.dart';
 
-class MockNewsService extends Mock implements NewsRepository {}
+class MockNewsRepository extends Mock implements NewsRepository {}
 
 void main() {
-  NewsRepository repository = MockNewsService();
+  NewsRepository repository = MockNewsRepository();
 
   final article = Article.fromJson({
     'title': 'title',
