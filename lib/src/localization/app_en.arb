@@ -1,0 +1,6 @@
+{
+  "appTitle": "news_app",
+  "@appTitle": {
+    "description": "Top Stories"
+  }
+}
